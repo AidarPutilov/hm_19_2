@@ -1,0 +1,70 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Бензопилы",
+      "description": "Ручная цепная пила, снабжённая двигателем внутреннего сгорания, как правило, двухтактным"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Мотоблоки",
+      "description": "Универсальное мобильное энергетическое средство на базе одноосного шасси, разновидность малогабаритного трактора"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Gigant YD-KW05-4516",
+      "description": "Бензопила Gigant  мощный инструмент для бытовых нужд. Мощность двигателя 2,1 л.с. обеспечивает возможность распила мягкой древесины.",
+      "preview": "",
+      "category": 2,
+      "price": 7019,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "PATRIOT PT 3816 220105510",
+      "description": "Бензопила PATRIOT PT 3816 220105510  мощный инструмент для бытовых нужд. Идеально справится с обрезанием кустов и небольших деревьев.",
+      "preview": "",
+      "category": 2,
+      "price": 8700,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "ЗУБР МТБ-300",
+      "description": "Бензиновый мотоблок ЗУБР МТБ-300 предназначен для рыхления и культивации почвы на приусадебном участке.",
+      "preview": "",
+      "category": 3,
+      "price": 39260,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Gigant 7,8 л.с. GSK-04",
+      "description": "Мотоблок Gigant 7,8 л.с. GSK-04 предназначен для выполнения сельскохозяйственных, снегоуборочных, транспортировочных и других работ.",
+      "preview": "",
+      "category": 3,
+      "price": 48232,
+      "created_at": null,
+      "updated_at": null
+    }
+  }
+]
