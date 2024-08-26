@@ -24,39 +24,41 @@
 
 <div class="container">
     <div class="row text-center">
+        {% for object in object_list %}
         <div class="col-3">
-            <div class="card mb-4 box-shadow">
-                <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Удобный сервис рассылок</h4>
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal"> {{ object.name }} </h4>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$ 140</h1>
-                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                        <li>- Неограниченная лицензия</li>
-                        <li>- Поддержка</li>
-                        <li>- Установка на сервер</li>
-                        <li>- Получение обновлений</li>
-                    </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                    <h1 class="card-title pricing-card-title"> {{ object.price }} <small class="text-body-secondary fw-light">руб.</small>
+                    </h1>
+                    <p class="list-unstyled mt-3 mb-4">
+                        {{ object.description }}
+                    </p>
+                    <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
                 </div>
             </div>
         </div>
-        <div class="col-9">
+        {% endfor %}
+        <!-- <div class="col-9">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Новые поступления товаров</h4>
                 </div>
                 <div class="card-body">
-                    {% for product in products %}
-                        <tr>
-                            <td>{{ product.id }}</td>
-                            <td>{{ product.name }}</td>
-                            <td>{{ product.price }}</td>
-                        </tr>
+                    <table>
+                    {% for object in object_list %}
+                    <tr>
+                        <td>{{ object.id }}</td>
+                        <td>{{ object.name }}</td>
+                        <td>{{ object.price }}</td>
+                    </tr>
                     {% endfor %}
+                    </table>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
@@ -91,6 +93,8 @@
     </footer>
 </div>
 
-<script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 </html>
