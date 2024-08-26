@@ -1,7 +1,14 @@
 from django.shortcuts import render
+from django.views.generic.list import ListView
+from catalog.models import Product
+
 
 def home(request):
-    return render(request, 'home.html')
+    product_list = Product.objects.all()
+    context = {
+        'object_list': product_list
+    }
+    return render(request, 'home.html', context)
 
 def contacts(request):
     if request.method == 'POST':
