@@ -10,6 +10,7 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
+
 def contacts(request):
     if request.method == 'POST':
         name = request.POST.get('name')
