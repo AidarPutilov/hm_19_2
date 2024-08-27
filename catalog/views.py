@@ -9,7 +9,7 @@ def home(request):
         'object_list': product_list,
         'title': 'Каталог товаров'
     }
-    return render(request, 'home2.html', context)
+    return render(request, 'home.html', context)
 
 
 def contacts(request):
