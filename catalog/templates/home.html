@@ -69,7 +69,7 @@
                 <h1 class="card-title pricing-card-title">{{ object.price }}<small
                         class="text-body-secondary fw-light"> руб.</small></h1>
                 <p class="list-unstyled mt-3 mb-4">
-                    {{ object.description }}
+                    {{ object.description|truncatechars:100 }}
                 </p>
                 <button type="button" class="w-100 btn btn-lg btn-primary">Подробнее</button>
             </div>
