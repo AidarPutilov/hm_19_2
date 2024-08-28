@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load my_tags %}
 
 {% block content %}
 
@@ -63,6 +64,7 @@
         <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
                 <h4 class="my-0 fw-normal">{{ product.name }}</h4>
+                <img src="{{ product.preview | media_filter }}" alt="{{ product.name }}">
             </div>
             <div class="card-body">
                 <h1 class="card-title pricing-card-title">{{ product.price }}<small

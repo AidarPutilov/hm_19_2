@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load my_tags %}
 
 {% block content %}
 
@@ -64,6 +65,7 @@
         <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
                 <h4 class="my-0 fw-normal">{{ object.name }}</h4>
+                <!-- <img src="{{ object.preview | media_filter }}" alt="{{ object.name }}"> -->
             </div>
             <div class="card-body">
                 <h1 class="card-title pricing-card-title">{{ object.price }}<small
@@ -72,7 +74,7 @@
                     {{ object.description|truncatechars:100 }}
                 </p>
                 <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Подробнее</button> -->
-                <a class="w-100 btn btn-lg btn-primary" href="{% url 'catalog:home' %}">Подробнее</a>
+                <a class="w-100 btn btn-lg btn-primary" href="{% url 'catalog:product' object.pk %}">Подробнее</a>
             </div>
         </div>
     </div>
