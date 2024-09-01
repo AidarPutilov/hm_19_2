@@ -22,6 +22,11 @@
                     <a class="btn btn-primary" href="{% url 'catalog:view_product' object.pk %}">Подробнее</a>
                     <a class="btn btn-outline-primary" href="{% url 'catalog:update_product' object.pk %}">Edit</a>
                     <a class="btn btn-outline-danger" href="{% url 'catalog:delete_product' object.pk %}">Del</a>
+                    {% if object.in_stock %}
+                        <a class="btn btn-secondary" href="{% url 'catalog:toggle_stock' object.pk %}">Наличие</a>
+                    {% else %}
+                        <a class="btn btn-outline-secondary" href="{% url 'catalog:toggle_stock' object.pk %}">Отсутсвует</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
