@@ -7,6 +7,16 @@ from django.urls import reverse, reverse_lazy
 class BlogListView(ListView):
     model = Blog
 
+    def get_queryset(self):
+        return Blog.objects.filter(is_published=True)
+
+
+class BlogArchiveListView(ListView):
+    model = Blog
+
+    def get_queryset(self):
+        return Blog.objects.filter(is_published=False)
+
 
 class BlogDetailView(DetailView):
     model = Blog
