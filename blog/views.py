@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from blog.models import Blog
 from django.urls import reverse, reverse_lazy
+from django.utils.text import slugify
 
 
 class BlogListView(ListView):
@@ -30,8 +31,12 @@ class BlogDetailView(DetailView):
 
 class BlogCreateView(CreateView):
     model = Blog
-    fields = ('title', 'text', 'slug', 'picture')
+    fields = ('title', 'text', 'picture')
     success_url = reverse_lazy('blog:blog_list')
+
+    def form_valid(self, form):
+        form.instance.slug = slugify(form.instance.title)
+        return super().form_valid(form)
 
 
 class BlogUpdateView(UpdateView):
