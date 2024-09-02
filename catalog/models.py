@@ -30,6 +30,7 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name="цена")
     created_at = models.DateField(auto_now_add=True, verbose_name="дата создания", null=True, blank=True)
     updated_at = models.DateField(auto_now=True, verbose_name="дата изменения", null=True, blank=True)
+    in_stock = models.BooleanField(default=True, verbose_name="в наличии")
 
     def __str__(self):
         return f"{self.name} {self.price}"
