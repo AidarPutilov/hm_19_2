@@ -20,12 +20,22 @@
                 <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Подробнее</button> -->
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <a class="btn btn-primary" href="{% url 'catalog:view_product' object.pk %}">Подробнее</a>
-                    <a class="btn btn-outline-primary" href="{% url 'catalog:update_product' object.pk %}">Edit</a>
-                    <a class="btn btn-outline-danger" href="{% url 'catalog:delete_product' object.pk %}">Del</a>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Действия
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'catalog:update_product' object.pk %}">Редактировать</a>
+                            <li><a class="dropdown-item" href="{% url 'catalog:delete_product' object.pk %}">Удалить</a>
+                            </li>
+                        </ul>
+                    </div>
                     {% if object.in_stock %}
-                        <a class="btn btn-secondary" href="{% url 'catalog:toggle_stock' object.pk %}">Наличие</a>
+                    <a class="btn btn-secondary" href="{% url 'catalog:toggle_stock' object.pk %}">Наличие</a>
                     {% else %}
-                        <a class="btn btn-outline-secondary" href="{% url 'catalog:toggle_stock' object.pk %}">Отсутсвует</a>
+                    <a class="btn btn-outline-secondary"
+                       href="{% url 'catalog:toggle_stock' object.pk %}">Отсутсвует</a>
                     {% endif %}
                 </div>
             </div>
