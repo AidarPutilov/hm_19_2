@@ -17,14 +17,14 @@ class ProductCreateView(CreateView):
     fields = ('name', 'description', 'category', 'price', 'preview')
     success_url = reverse_lazy('catalog:home')
 
-    def get_success_url(self):
-        return reverse('catalog:view_product', args=[self.kwargs.get('pk')])
-
 
 class ProductUpdateView(UpdateView):
     model = Product
     fields = ('name', 'description', 'category', 'price', 'preview')
     success_url = reverse_lazy('catalog:home')
+
+    def get_success_url(self):
+        return reverse('catalog:view_product', args=[self.kwargs.get('pk')])
 
 
 class ProductDeleteView(DeleteView):
