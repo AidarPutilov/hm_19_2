@@ -29,9 +29,9 @@
 
                 </div>
             </div>
+            {% if object %}
             <div class="col-6">
                 <div class="card">
-                    {% if object %}
                     <h3 class="card-title text-center mb-3">
                         Версии продукта
                     </h3>
@@ -41,9 +41,9 @@
                         {{ form.as_p }}
                         {% endfor %}
                     </div>
-                    {% endif %}
                 </div>
             </div>
+            {% endif %}
         </div>
     </form>
 </div>
