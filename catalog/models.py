@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# Категории продуктов
 class Category(models.Model):
     name = models.CharField(
         max_length=50,
@@ -20,6 +21,7 @@ class Category(models.Model):
         ordering = ("name",)
 
 
+# Продукты
 class Product(models.Model):
     name = models.CharField(
         max_length=50,
@@ -65,6 +67,7 @@ class Product(models.Model):
         ordering = ("name",)
 
 
+# Версии
 class Version(models.Model):
     product = models.ForeignKey(
         Product,

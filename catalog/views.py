@@ -62,7 +62,6 @@ class ProductUpdateView(UpdateView):
             return self.render_to_response(self.get_context_data(form=form, formset=formset))
 
 
-
 class ProductDeleteView(DeleteView):
     model = Product
     success_url = reverse_lazy('catalog:home')
@@ -77,15 +76,3 @@ def toggle_stock(request, pk):
     product_item.in_stock = not product_item.in_stock
     product_item.save()
     return redirect(reverse('catalog:home'))
-
-
-# def contacts(request):
-#     if request.method == 'POST':
-#         name = request.POST.get('name')
-#         phone = request.POST.get('phone')
-#         message = request.POST.get('message')
-#         print(f'Message from {name}(tel.: {phone}): {message}')
-#     context = {
-#         'title': 'Контакты'
-#     }
-#     return render(request, 'contacts.html', context)
