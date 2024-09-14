@@ -20,7 +20,7 @@
                 <p class="list-unstyled mt-3 mb-4">
                     {% for v in versions.items %}
                     {% if v.0 == object.pk %}
-                    Активные версии: {{ v.1 }}
+                    Текущая версия: {{ v.1 }}
                     {% endif %}
                     {% endfor %}
                 </p>
