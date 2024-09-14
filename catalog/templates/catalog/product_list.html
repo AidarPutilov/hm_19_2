@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load my_tags %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -9,7 +10,6 @@
         <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
                 <h4 class="my-0 fw-normal">{{ object.category }} {{ object.name }}</h4>
-                <!-- <img src="{{ object.preview | media_filter }}" alt="{{ object.name }}"> -->
             </div>
             <div class="card-body">
                 <h1 class="card-title pricing-card-title">{{ object.price }}<small
@@ -17,7 +17,13 @@
                 <p class="list-unstyled mt-3 mb-4">
                     {{ object.description|truncatechars:100 }}
                 </p>
-                <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Подробнее</button> -->
+                <p class="list-unstyled mt-3 mb-4">
+                    {% for v in versions.items %}
+                    {% if v.0 == object.pk %}
+                    Текущая версия: {{ v.1 }}
+                    {% endif %}
+                    {% endfor %}
+                </p>
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <a class="btn btn-primary" href="{% url 'catalog:view_product' object.pk %}">Подробнее</a>
                     <div class="btn-group" role="group">
