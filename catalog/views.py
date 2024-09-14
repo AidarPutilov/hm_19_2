@@ -10,6 +10,17 @@ from django.urls import reverse, reverse_lazy
 class ProductListView(ListView):
     model = Product
 
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        version_dict = {}
+        for product in Product.objects.all():
+            for version in Version.objects.all():
+                if version.is_current:
+                    if version.product_id == int(product.pk):
+                        version_dict[version.product_id] = version.name
+        context_data['versions'] = version_dict
+        return context_data
+
 
 class ProductDetailView(DetailView):
     model = Product

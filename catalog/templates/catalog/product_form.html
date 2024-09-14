@@ -19,7 +19,6 @@
                     <div class="card-body">
                         {% csrf_token %}
                         {{ form|crispy }}
-<!--                         {{ form.as_p }} -->
                         <button type="submit" class="btn btn-success">
                             {% if object %}
                             Сохранить
@@ -41,7 +40,6 @@
                         {{ formset.management_form }}
                         {% for form in formset.forms %}
                         {{ form|crispy }}
-<!--                        {{ form.as_p }}-->
                         {% endfor %}
                     </div>
                 </div>
